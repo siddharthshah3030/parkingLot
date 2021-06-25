@@ -18,6 +18,7 @@ def park(plate,age):
     "plate":plate,
     "age":age
   }
+  print("parked",plate)
 
 def get_slot_numbers_from_age(age):
   slot_numbers = []
@@ -49,12 +50,12 @@ def get_plates_from_age(age):
 
 
 create_parking_lot(45)
-park("sd",34)
-park("s22",35)
-park("s22",34)
-print(slots)
-get_slot_numbers_from_age(34)
-get_slot_numbers_from_age(34)
-get_slot_numbers_from_plates("sd")
-remove_car(2)
-get_plates_from_age(34)
+# park("sd",34)
+# park("s22",35)
+# park("s22",34)
+# print(slots)
+# get_slot_numbers_from_age(34)
+# get_slot_numbers_from_age(34)
+# get_slot_numbers_from_plates("sd")
+# remove_car(2)
+# get_plates_from_age(34)
