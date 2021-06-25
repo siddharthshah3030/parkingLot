@@ -54,7 +54,7 @@ class TestParking(unittest.TestCase):
         parking_lot.create(1)
         parking_lot.park("HH-HH",int(2))
         slot_emptied = parking_lot.empty_slot(0)
-        self.assertEqual(slot_emptied,{"plate":"HH-HH","age":int(2) })
+        self.assertEqual(slot_emptied.plate, "HH-HH")
         
 
     def test_leave_empty_slot(self):
