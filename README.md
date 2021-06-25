@@ -31,3 +31,16 @@ main.py -> primary file to execute queries from input.txt
 ---
 
 
+## Using docker
+build image with
+```
+sudo docker build -t parking-lot .
+```
+verify the image is built
+```
+sudo docker images
+```
+Running the Docker Container
+```
+sudo docker run -it parking-lot test.py
+```

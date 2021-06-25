@@ -19,14 +19,14 @@ def get_slot_numbers_from_plates(query):
   if(len(slots)==0):
     print(f"no vehicle with the license plate {query[1]} exists in the parking lot")
   else:
-    print(slots)
+    print(*slots)
   
 def get_slot_numbers_from_age(query):
   slots = parking_lot.slots_from_age(int(query[1]))
   if(len(slots)==0):
     print(f"no vehicles of drivers with the age {query[1]} exists in the parking lot")
   else:
-    print(slots)
+    print(*slots)
 
 def remove_car(query):
   car_details = parking_lot.empty_slot(int(query[1]))
@@ -41,7 +41,7 @@ def get_plates_from_age(query):
   if(len(slots)==0):
     print(f"no vehicles of drivers with the age {query[1]} exists in the parking lot")
   else:
-    print(slots)
+    print(*slots)
 
 
 def execute(query):
@@ -59,5 +59,6 @@ def execute(query):
   elif query[0] == "Leave": 
     remove_car(query)
   else:
-    print("Invalid query format, please check") 
+    print("")
+    warnings.warn('Execution of below query failed - '+ "".join(query))
   
