@@ -1,17 +1,11 @@
-# self.slots = []
-
 class parking:
   def __init__(self):
     self.slots = []
 
   def create(self,size):
-    # global self.slots
-    print(size)
     self.slots = [None]*size
 
-
   def park(self,plate,age):
-    # i = self.slots.index(None)
     availableSlot = None
     for i in range(len(self.slots)):
         if self.slots[i] == None:
@@ -22,7 +16,7 @@ class parking:
       "plate":plate,
       "age":age
     }
-    print("parked",plate)
+    return availableSlot+1
 
   def slots_from_age(self,age):
     slot_numbers = []
@@ -30,27 +24,32 @@ class parking:
       if (slot and slot["age"]==age):
         slot_numbers.append(index+1)
 
-    print(slot_numbers)
+    return slot_numbers
 
   def slots_from_plate(self,plate):
+    plate = plate.replace("\n", "")
     slot_numbers = []
     for index, slot in enumerate(self.slots):
-      if (slot and slot["plate"]==plate):
+      if (slot and slot["plate"] == plate):
         slot_numbers.append(index+1)
-    print(slot_numbers)
+    return slot_numbers
 
   def empty_slot(self,slot_number):
-    if(self.slots[slot_number-1]==None): print("Slot already vacant")
+    car_details = None
+    if(self.slots[slot_number-1]==None): 
+      return None
     else:
-      print("removed car")
+      car_details = self.slots[slot_number-1]
       self.slots[slot_number-1]= None
+    return car_details
     
   def plates_from_age(self,age):
     plate_numbers = []
     for index, slot in enumerate(self.slots):
-      if (slot and slot["age"]==age):
+      if (slot and slot["age"]== age):
+      
         plate_numbers.append(slot["plate"])
-    print(plate_numbers)
+    return plate_numbers
 
 # create_parking_lot
 # parking_lot = parking()
