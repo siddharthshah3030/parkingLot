@@ -1,3 +1,8 @@
+"""
+Logical parking class
+interact via parking_helper.py
+"""
+
 class parking:
   def __init__(self):
     self.slots = []
