@@ -33,7 +33,7 @@ def remove_car(query):
   if car_details==None :
     print(f"slot {queryp[1]} is already empty")
   else:
-    print(f'Slot number {int(query[1])} vacated, the car with vehicle registration number "{car_details["plate"]}" left the space, the driver of the car was of age {car_details["age"]}')
+    print(f'Slot number {int(query[1])} vacated, the car with vehicle registration number "{car_details.plate}" left the space, the driver of the car was of age {car_details.age}')
 
   
 def get_plates_from_age(query):

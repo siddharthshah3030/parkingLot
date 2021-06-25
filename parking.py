@@ -9,6 +9,12 @@ availableSlotIndex = minimum distance vacant slot available at any moment, None 
 
 """
 
+class Vehicle:
+	def __init__(self, plate, age):
+		self.plate = plate
+		self.age = age
+
+    
 class parking:
   def __init__(self):
     self.slots = []
@@ -21,10 +27,7 @@ class parking:
   def park(self,plate,age):
     if(self.availableSlotIndex==None):
       return None
-    self.slots[self.availableSlotIndex] = {
-      "plate":plate,
-      "age":age
-    }
+    self.slots[self.availableSlotIndex] = Vehicle(plate,age)
     indexFilled = self.availableSlotIndex
     self.availableSlotIndex = None
     
@@ -39,7 +42,7 @@ class parking:
   def slots_from_age(self,age):
     slot_numbers = []
     for index, slot in enumerate(self.slots):
-      if (slot and slot["age"]==age):
+      if (slot and slot.age==age):
         slot_numbers.append(index+1)
 
     return slot_numbers
@@ -48,7 +51,7 @@ class parking:
     plate = plate.replace("\n", "")
     slot_numbers = []
     for index, slot in enumerate(self.slots):
-      if (slot and slot["plate"] == plate):
+      if (slot and slot.plate == plate):
         slot_numbers.append(index+1)
     return slot_numbers
 
@@ -68,7 +71,7 @@ class parking:
   def plates_from_age(self,age):
     plate_numbers = []
     for index, slot in enumerate(self.slots):
-      if (slot and slot["age"]== age):
+      if (slot and slot.age == age):
       
-        plate_numbers.append(slot["plate"])
+        plate_numbers.append(slot.plate)
     return plate_numbers
