@@ -11,7 +11,8 @@ class parking:
         if self.slots[i] == None:
           availableSlot = i
           break
-
+    if(availableSlot==None):
+      return None
     self.slots[availableSlot] = {
       "plate":plate,
       "age":age
