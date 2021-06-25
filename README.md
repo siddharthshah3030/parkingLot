@@ -2,9 +2,9 @@
 just a small library to manage a parking lot
 
 ## Optimisation
-```
-maintains `availableSlotIndex` which is vacant slot with smallest distance at any moment to improve query's performance by reducing computations
-```
+maintains `availableSlotIndex` 
+which is vacant slot with smallest distance at any moment to improve query's performance by reducing computations
+
 
 ## Install
 Tested in `Python3.5` on `Ubuntu 20.04`
