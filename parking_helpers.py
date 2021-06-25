@@ -5,52 +5,59 @@ parking_lot = parking()
 
 
 def create_new_parking_lot(query):
-    parking_lot.create(int(query[1]))
-    print(f"Created parking of {int(query[1])} slots")
+    size = query[1]
+    parking_lot.create(int(size))
+    print(f"Created parking of {int(size)} slots")
 
 
 def park_car(query):
-    slot_parked = parking_lot.park(query[1], int(query[3]))
+    plate = query[1]
+    age = query[3]
+    slot_parked = parking_lot.park(plate, int(age))
     if (slot_parked == None):
         print(
-            f"Parking lot is fully occupied and vehicle {query[1]} cannot be parked")
+            f"Parking lot is fully occupied and vehicle {plate} cannot be parked")
     else:
         print(
-            f'Car with vehicle registration number "{query[1]}" has been parked at slot number {slot_parked}')
+            f'Car with vehicle registration number "{plate}" has been parked at slot number {slot_parked}')
 
 
 def get_slot_numbers_from_plates(query):
-    slots = parking_lot.slots_from_plate(query[1])
+    plate = query[1]
+    slots = parking_lot.slots_from_plate(plate)
     if(len(slots) == 0):
         print(
-            f"no vehicle with the license plate {query[1]} exists in the parking lot")
+            f"no vehicle with the license plate {plate} exists in the parking lot")
     else:
         print(*slots)
 
 
 def get_slot_numbers_from_age(query):
-    slots = parking_lot.slots_from_age(int(query[1]))
+    age = query[1]
+    slots = parking_lot.slots_from_age(int(age))
     if(len(slots) == 0):
         print(
-            f"no vehicles of drivers with the age {query[1]} exists in the parking lot")
+            f"no vehicles of drivers with the age {age} exists in the parking lot")
     else:
         print(*slots)
 
 
 def remove_car(query):
-    car_details = parking_lot.empty_slot(int(query[1])-1)
+    slot_number = query[1]
+    car_details = parking_lot.empty_slot(int(slot_number)-1)
     if car_details == None:
-        print(f"slot {queryp[1]} is already empty")
+        print(f"slot {slot_number} is already empty")
     else:
         print(
-            f'Slot number {int(query[1])} vacated, the car with vehicle registration number "{car_details.plate}" left the space, the driver of the car was of age {car_details.age}')
+            f'Slot number {int(slot_number)} vacated, the car with vehicle registration number "{car_details.plate}" left the space, the driver of the car was of age {car_details.age}')
 
 
 def get_plates_from_age(query):
-    slots = parking_lot.plates_from_age(int(query[1]))
+    age = query[1]
+    slots = parking_lot.plates_from_age(int(age))
     if(len(slots) == 0):
         print(
-            f"no vehicles of drivers with the age {query[1]} exists in the parking lot")
+            f"no vehicles of drivers with the age {age} exists in the parking lot")
     else:
         print(*slots)
 
