@@ -8,7 +8,8 @@ def readInputFile():
       try:
         execute(query)
       except:
-        warnings.warn('Execution of below query failed - '+query)
+        warnings.warn('Execution of a query failed, query is - ""'+ ''.join(query)+'""')
+
 
 
 if __name__ == '__main__':

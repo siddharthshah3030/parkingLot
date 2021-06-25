@@ -1,6 +1,11 @@
 # parkingLot
 just a small library to manage a parking lot
 
+## Optimisation
+```
+maintains `availableSlotIndex` which is vacant slot with smallest distance at any moment to improve query's performance by reducing computations
+```
+
 ## Install
 Tested in `Python3.5` on `Ubuntu 20.04`
 ```
@@ -38,9 +43,9 @@ sudo docker build -t parking-lot .
 ```
 verify the image is built
 ```
-sudo docker images
+docker images
 ```
 Running the Docker Container
 ```
-sudo docker run -it parking-lot test.py
+docker run -it parking-lot main.py
 ```

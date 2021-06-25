@@ -29,7 +29,7 @@ def get_slot_numbers_from_age(query):
     print(*slots)
 
 def remove_car(query):
-  car_details = parking_lot.empty_slot(int(query[1]))
+  car_details = parking_lot.empty_slot(int(query[1])-1)
   if car_details==None :
     print(f"slot {queryp[1]} is already empty")
   else:
@@ -59,6 +59,5 @@ def execute(query):
   elif query[0] == "Leave": 
     remove_car(query)
   else:
-    print("")
-    warnings.warn('Execution of below query failed - '+ "".join(query))
+    warnings.warn('Execution of a query failed, query is - ""'+ ''.join(query)+'""')
   
